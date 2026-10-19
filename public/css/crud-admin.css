@@ -1,0 +1,1000 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*
+ * Pink Beauty presentation for the four administration CRUD screens.
+ * Everything is scoped to the CRUD component names so the dashboard,
+ * navigation and remaining views retain their own presentation.
+ */
+
+.crud-page {
+    --crud-accent: #e75480;
+    --crud-accent-strong: #c93668;
+    --crud-accent-rgb: 231, 84, 128;
+    --crud-tint: #fff0f5;
+    --crud-tint-deep: #f8dce7;
+    --crud-canvas: #fff8fb;
+    --crud-banner-start: #f8b5ce;
+    --crud-banner-middle: #f5d5e5;
+    --crud-banner-ink: #783751;
+    --crud-surface: #ffffff;
+    --crud-ink: #4a3540;
+    --crud-muted: #947d89;
+    --crud-border: #f8e5ed;
+    --crud-shadow: 0 5px 20px rgba(166, 91, 121, 0.08);
+    --crud-shadow-hover: 0 12px 28px rgba(199, 74, 120, 0.15);
+
+    min-height: 100vh;
+    padding: clamp(1rem, 2.5vw, 2rem);
+    color: var(--crud-ink);
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 100% 0, rgba(var(--crud-accent-rgb), 0.08), transparent 25rem),
+        var(--crud-canvas);
+}
+
+/* Product = main pink, categories = lilac, clients = peach, branches = rose. */
+.crud-page.crud-theme-blue,
+.crud-page.crud-theme-pink,
+.crud-page--productos,
+.beauty-crud--productos {
+    --crud-accent: #e75480;
+    --crud-accent-strong: #c93668;
+    --crud-accent-rgb: 231, 84, 128;
+    --crud-tint: #fff0f5;
+    --crud-tint-deep: #f8dce7;
+    --crud-canvas: #fff8fb;
+    --crud-banner-start: #f8b5ce;
+    --crud-banner-middle: #f5d5e5;
+    --crud-banner-ink: #783751;
+}
+
+.crud-page.crud-theme-green,
+.crud-page.crud-theme-lilac,
+.crud-page--categorias,
+.beauty-crud--categorias {
+    --crud-accent: #9b70c6;
+    --crud-accent-strong: #7d54a8;
+    --crud-accent-rgb: 155, 112, 198;
+    --crud-tint: #f4edff;
+    --crud-tint-deep: #e6daf8;
+    --crud-canvas: #fcfaff;
+    --crud-banner-start: #d9c7ef;
+    --crud-banner-middle: #eee7f8;
+    --crud-banner-ink: #5f4578;
+}
+
+.crud-page.crud-theme-yellow,
+.crud-page.crud-theme-peach,
+.crud-page--clientes,
+.beauty-crud--clientes {
+    --crud-accent: #df8a63;
+    --crud-accent-strong: #bf6b47;
+    --crud-accent-rgb: 223, 138, 99;
+    --crud-tint: #fff2e9;
+    --crud-tint-deep: #fce0d1;
+    --crud-canvas: #fffaf7;
+    --crud-banner-start: #f7c5ae;
+    --crud-banner-middle: #fbe2d3;
+    --crud-banner-ink: #7e4d3b;
+}
+
+.crud-page.crud-theme-red,
+.crud-page.crud-theme-rose,
+.crud-page--sucursales,
+.beauty-crud--sucursales {
+    --crud-accent: #c94d72;
+    --crud-accent-strong: #a93559;
+    --crud-accent-rgb: 201, 77, 114;
+    --crud-tint: #fdeaf0;
+    --crud-tint-deep: #f8d6e1;
+    --crud-canvas: #fff9fb;
+    --crud-banner-start: #f2b7ca;
+    --crud-banner-middle: #f8dce6;
+    --crud-banner-ink: #73384d;
+}
+
+.crud-page,
+.crud-page .btn,
+.crud-page input,
+.crud-page select,
+.crud-page textarea,
+.crud-modal,
+.beauty-crud-modal {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Ruta de navegación usada sobre el banner. */
+.crud-page .beauty-page__breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    margin: 0 0 0.85rem;
+    color: var(--crud-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.crud-page .beauty-page__breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    color: var(--crud-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.crud-page .beauty-page__breadcrumb a:hover {
+    color: var(--crud-accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 0.18rem;
+}
+
+/* Banner / heading ------------------------------------------------------- */
+
+.crud-page :is(.crud-header, .beauty-page__banner, .beauty-crud__hero),
+.beauty-crud :is(.crud-header, .beauty-page__banner, .beauty-crud__hero) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    overflow: hidden;
+    min-height: 9.25rem;
+    margin-bottom: 1.5rem;
+    padding: clamp(1.35rem, 3vw, 2rem);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 1.375rem;
+    background: linear-gradient(
+        120deg,
+        var(--crud-banner-start),
+        var(--crud-banner-middle) 60%,
+        var(--crud-tint)
+    );
+    box-shadow: 0 8px 25px rgba(var(--crud-accent-rgb), 0.13);
+}
+
+.crud-page :is(.crud-header, .beauty-page__banner, .beauty-crud__hero)::after,
+.beauty-crud :is(.crud-header, .beauty-page__banner, .beauty-crud__hero)::after {
+    position: absolute;
+    right: -3rem;
+    bottom: -5rem;
+    width: 12rem;
+    height: 12rem;
+    border: 1.5rem solid rgba(255, 255, 255, 0.26);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.crud-page :is(.crud-header__content, .beauty-page__banner-copy, .beauty-crud__hero-copy),
+.beauty-crud :is(.crud-header__content, .beauty-page__banner-copy, .beauty-crud__hero-copy),
+.crud-page :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions),
+.beauty-crud :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions) {
+    position: relative;
+    z-index: 1;
+}
+
+.crud-page :is(.crud-header__content, .beauty-page__banner-copy, .beauty-crud__hero-copy),
+.beauty-crud :is(.crud-header__content, .beauty-page__banner-copy, .beauty-crud__hero-copy) {
+    min-width: 0;
+}
+
+.crud-page .beauty-crud__hero-copy,
+.beauty-crud .beauty-crud__hero-copy {
+    flex: 1 1 auto;
+}
+
+.crud-page .beauty-crud__hero-icon,
+.beauty-crud .beauty-crud__hero-icon {
+    order: 2;
+}
+
+.crud-page .beauty-crud__hero-actions,
+.beauty-crud .beauty-crud__hero-actions {
+    order: 3;
+}
+
+.crud-page :is(.crud-header__eyebrow, .beauty-page__eyebrow, .beauty-crud__eyebrow),
+.beauty-crud :is(.crud-header__eyebrow, .beauty-page__eyebrow, .beauty-crud__eyebrow) {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--crud-banner-ink);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    opacity: 0.82;
+    text-transform: uppercase;
+}
+
+.crud-page :is(.crud-header__title, .beauty-page__banner h1, .beauty-crud__hero h1),
+.beauty-crud :is(.crud-header__title, .beauty-page__banner h1, .beauty-crud__hero h1) {
+    margin: 0;
+    color: var(--crud-banner-ink);
+    font-size: clamp(1.55rem, 3.4vw, 2.05rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+}
+
+.crud-page .crud-header__title > i,
+.crud-page :is(.beauty-page__banner, .beauty-crud__hero) h1 > i,
+.beauty-crud .crud-header__title > i,
+.beauty-crud :is(.beauty-page__banner, .beauty-crud__hero) h1 > i {
+    display: inline-grid;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 0.3rem;
+    place-items: center;
+    border-radius: 0.7rem;
+    color: var(--crud-accent);
+    font-size: 1.15rem;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.58);
+}
+
+.crud-page :is(.crud-header__subtitle, .beauty-page__banner p, .beauty-crud__hero p),
+.beauty-crud :is(.crud-header__subtitle, .beauty-page__banner p, .beauty-crud__hero p) {
+    max-width: 36rem;
+    margin: 0.45rem 0 0;
+    color: var(--crud-banner-ink);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+.crud-page :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions),
+.beauty-crud :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions) {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.crud-page :is(.beauty-page__banner-icon, .beauty-crud__hero-icon),
+.beauty-crud :is(.beauty-page__banner-icon, .beauty-crud__hero-icon) {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: clamp(4rem, 9vw, 5.9rem);
+    height: clamp(4rem, 9vw, 5.9rem);
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 1.35rem;
+    color: var(--crud-accent);
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Buttons, badges and small statistics ---------------------------------- */
+
+.crud-page .btn,
+.crud-modal .btn,
+.beauty-crud-modal .btn,
+.crud-page .beauty-crud__primary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.38rem;
+    min-height: 2.45rem;
+    border-radius: 0.72rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.crud-page .btn-primary,
+.crud-page .btn-crud-primary,
+.crud-page .beauty-crud__primary-action,
+.crud-modal .btn-primary,
+.beauty-crud-modal .btn-primary {
+    color: #ffffff;
+    border-color: var(--crud-accent);
+    background: var(--crud-accent);
+    box-shadow: 0 4px 10px rgba(var(--crud-accent-rgb), 0.2);
+}
+
+.crud-page .btn-primary:hover,
+.crud-page .btn-crud-primary:hover,
+.crud-page .beauty-crud__primary-action:hover,
+.crud-modal .btn-primary:hover,
+.beauty-crud-modal .btn-primary:hover {
+    color: #ffffff;
+    border-color: var(--crud-accent-strong);
+    background: var(--crud-accent-strong);
+    box-shadow: 0 7px 14px rgba(var(--crud-accent-rgb), 0.26);
+    transform: translateY(-1px);
+}
+
+.crud-page .btn-secondary,
+.crud-modal .btn-secondary,
+.beauty-crud-modal .btn-secondary {
+    color: #755967;
+    border-color: #efdde5;
+    background: #ffffff;
+}
+
+.crud-page .btn-secondary:hover,
+.crud-modal .btn-secondary:hover,
+.beauty-crud-modal .btn-secondary:hover {
+    color: #5c4350;
+    border-color: #e6ccd8;
+    background: #fff7fa;
+}
+
+.crud-page .btn-info,
+.crud-modal .btn-info,
+.beauty-crud-modal .btn-info,
+.crud-page .beauty-crud__action--view {
+    color: #765697;
+    border-color: #e2d6f2;
+    background: #f4edff;
+}
+
+.crud-page .btn-info:hover,
+.crud-modal .btn-info:hover,
+.beauty-crud-modal .btn-info:hover,
+.crud-page .beauty-crud__action--view:hover {
+    color: #664986;
+    border-color: #d6c5eb;
+    background: #eadffd;
+}
+
+.crud-page .btn-warning,
+.crud-modal .btn-warning,
+.beauty-crud-modal .btn-warning,
+.crud-page .beauty-crud__action--edit {
+    color: #a95c3a;
+    border-color: #f4d7c7;
+    background: #fff2e9;
+}
+
+.crud-page .btn-warning:hover,
+.crud-modal .btn-warning:hover,
+.beauty-crud-modal .btn-warning:hover,
+.crud-page .beauty-crud__action--edit:hover {
+    color: #8d482c;
+    border-color: #edc3ad;
+    background: #fbe5d9;
+}
+
+.crud-page .btn-danger,
+.crud-modal .btn-danger,
+.beauty-crud-modal .btn-danger,
+.crud-page .beauty-crud__action--delete {
+    color: #b13a60;
+    border-color: #f3ceda;
+    background: #fdeaf0;
+}
+
+.crud-page .btn-danger:hover,
+.crud-modal .btn-danger:hover,
+.beauty-crud-modal .btn-danger:hover,
+.crud-page .beauty-crud__action--delete:hover {
+    color: #ffffff;
+    border-color: #bd4165;
+    background: #c94d72;
+}
+
+.crud-page .btn-crud-outline {
+    color: var(--crud-accent);
+    border-color: rgba(var(--crud-accent-rgb), 0.35);
+    background: #ffffff;
+}
+
+.crud-page .btn-crud-outline:hover {
+    color: #ffffff;
+    border-color: var(--crud-accent);
+    background: var(--crud-accent);
+}
+
+.crud-page :is(.badge, .beauty-page__badge),
+.beauty-crud :is(.badge, .beauty-page__badge) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.43rem 0.72rem;
+    border: 1px solid rgba(var(--crud-accent-rgb), 0.16) !important;
+    border-radius: 999px;
+    color: var(--crud-accent-strong);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    background: var(--crud-tint) !important;
+}
+
+.crud-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.crud-summary__item,
+.beauty-crud__count {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--crud-border);
+    border-radius: 1.1rem;
+    color: var(--crud-ink);
+    background: var(--crud-surface);
+    box-shadow: var(--crud-shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.crud-summary__item:hover,
+.beauty-crud__count:hover {
+    box-shadow: var(--crud-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.crud-summary__icon {
+    display: inline-grid;
+    width: 2.8rem;
+    height: 2.8rem;
+    flex: 0 0 2.8rem;
+    place-items: center;
+    border-radius: 0.9rem;
+    color: var(--crud-accent);
+    font-size: 1.3rem;
+    background: var(--crud-tint);
+}
+
+.crud-summary__body {
+    min-width: 0;
+}
+
+.crud-summary__label {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: var(--crud-muted);
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+.crud-summary__value {
+    display: block;
+    overflow: hidden;
+    color: var(--crud-ink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.beauty-crud__count {
+    width: fit-content;
+    min-height: 2.6rem;
+    padding: 0.55rem 0.8rem;
+    border-color: rgba(255, 255, 255, 0.58);
+    color: var(--crud-banner-ink);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+}
+
+.beauty-crud__count strong {
+    color: var(--crud-banner-ink);
+    font-size: 1.12rem;
+    font-weight: 700;
+}
+
+.beauty-crud__count span {
+    color: var(--crud-banner-ink);
+    font-size: 0.72rem;
+    font-weight: 500;
+    opacity: 0.82;
+}
+
+/* Data card and table ---------------------------------------------------- */
+
+.crud-table-card,
+.beauty-crud__table-card {
+    overflow: hidden;
+    border: 1px solid var(--crud-border);
+    border-radius: 1.25rem;
+    background: var(--crud-surface);
+    box-shadow: var(--crud-shadow);
+}
+
+.crud-table-card :is(.crud-table-card__header, .card-header, .crud-table-card__toolbar),
+.beauty-crud__table-card :is(.crud-table-card__header, .card-header, .crud-table-card__toolbar, .beauty-crud__table-toolbar) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding: 1.05rem 1.25rem;
+    border: 0;
+    border-bottom: 1px solid var(--crud-border);
+    background: #ffffff;
+}
+
+.crud-table-card :is(.crud-table-card__title, .card-title, .beauty-crud__card-heading),
+.beauty-crud__table-card :is(.crud-table-card__title, .card-title, .beauty-crud__card-heading) {
+    margin: 0;
+    color: #583748;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.crud-table-card :is(.crud-table-card__title, .card-title, .beauty-crud__card-heading) > i,
+.beauty-crud__table-card :is(.crud-table-card__title, .card-title, .beauty-crud__card-heading) > i {
+    display: inline-grid;
+    width: 1.9rem;
+    height: 1.9rem;
+    margin-right: 0.4rem;
+    place-items: center;
+    border-radius: 0.62rem;
+    color: var(--crud-accent);
+    background: var(--crud-tint);
+}
+
+.crud-table-card__body,
+.crud-table-card .card-body,
+.beauty-crud__table-card .card-body {
+    padding: 0;
+}
+
+.crud-table-card .table-responsive,
+.beauty-crud__table-card .table-responsive {
+    margin: 0;
+}
+
+.crud-table {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(var(--crud-accent-rgb), 0.045);
+    --bs-table-color: var(--crud-ink);
+    width: 100%;
+    margin: 0;
+    color: var(--crud-ink);
+    border-color: var(--crud-border);
+    vertical-align: middle;
+}
+
+.crud-table > :not(caption) > * > * {
+    padding: 0.92rem 1.25rem;
+    border-bottom-color: var(--crud-border);
+    vertical-align: middle;
+}
+
+.crud-table thead th {
+    border-bottom-width: 1px;
+    color: var(--crud-muted);
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: var(--crud-tint);
+}
+
+.crud-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.crud-table tbody tr:last-child > * {
+    border-bottom-width: 0;
+}
+
+.crud-table td {
+    color: #735866;
+    font-size: 0.86rem;
+}
+
+.crud-table td:first-child {
+    color: var(--crud-ink);
+    font-weight: 600;
+}
+
+.beauty-crud__stock,
+.beauty-crud__price {
+    color: var(--crud-ink);
+    font-weight: 600;
+}
+
+.beauty-crud__stock {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.32rem 0.55rem;
+    border-radius: 999px;
+    color: var(--crud-accent-strong);
+    font-size: 0.73rem;
+    background: var(--crud-tint);
+}
+
+.beauty-crud__item-name {
+    color: var(--crud-ink);
+    font-weight: 600;
+}
+
+.beauty-crud__table-toolbar .text-muted {
+    color: var(--crud-muted) !important;
+    font-size: 0.8rem;
+}
+
+.crud-table .crud-table__actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    white-space: normal;
+}
+
+.crud-table .crud-table__actions .btn,
+.crud-table .crud-table__actions .beauty-crud__action--view,
+.crud-table .crud-table__actions .beauty-crud__action--edit,
+.crud-table .crud-table__actions .beauty-crud__action--delete {
+    min-width: 2.25rem;
+    min-height: 2.12rem;
+    padding: 0.38rem 0.62rem;
+    border-radius: 0.62rem;
+    font-size: 0.73rem;
+    box-shadow: none;
+}
+
+.crud-table-card__empty,
+.beauty-crud__empty {
+    padding: 3.4rem 1.25rem !important;
+    color: var(--crud-muted) !important;
+    text-align: center;
+}
+
+.crud-table-card__empty i,
+.beauty-crud__empty i {
+    display: block;
+    margin-bottom: 0.7rem;
+    color: var(--crud-accent);
+    font-size: 2.2rem;
+}
+
+.crud-table-card__empty p,
+.beauty-crud__empty p {
+    margin: 0;
+}
+
+/* Alerts ----------------------------------------------------------------- */
+
+.crud-page .alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.86rem;
+    box-shadow: 0 4px 14px rgba(166, 91, 121, 0.06);
+}
+
+.crud-page .alert-success {
+    color: #4f7a61;
+    border-color: #d9eedf;
+    background: #f1fbf4;
+}
+
+.crud-page .alert-danger {
+    color: #a83e5e;
+    border-color: #f5d3de;
+    background: #fff3f6;
+}
+
+/* Modals ----------------------------------------------------------------- */
+
+.crud-modal,
+.beauty-crud-modal {
+    --crud-accent: #e75480;
+    --crud-accent-strong: #c93668;
+    --crud-accent-rgb: 231, 84, 128;
+    --crud-tint: #fff0f5;
+    --crud-tint-deep: #f8dce7;
+    --crud-banner-ink: #783751;
+    --crud-ink: #4a3540;
+    --crud-muted: #947d89;
+    --crud-border: #f8e5ed;
+}
+
+/*
+ * Product and category modals can be inside .crud-page.  Client and branch
+ * modals can be subsequent siblings of it.  These mappings cover both DOM
+ * arrangements, including a modal-content carrying beauty-crud-modal.
+ */
+.crud-page.crud-theme-blue :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-pink :is(.crud-modal, .beauty-crud-modal),
+.crud-page--productos :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-blue ~ .modal,
+.crud-page.crud-theme-pink ~ .modal,
+.crud-page--productos ~ .modal,
+.crud-page.crud-theme-blue ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-pink ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page--productos ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.beauty-crud--productos ~ .modal,
+.beauty-crud--productos ~ .modal :is(.crud-modal, .beauty-crud-modal) {
+    --crud-accent: #e75480;
+    --crud-accent-strong: #c93668;
+    --crud-accent-rgb: 231, 84, 128;
+    --crud-tint: #fff0f5;
+    --crud-tint-deep: #f8dce7;
+    --crud-banner-ink: #783751;
+}
+
+.crud-page.crud-theme-green :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-lilac :is(.crud-modal, .beauty-crud-modal),
+.crud-page--categorias :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-green ~ .modal,
+.crud-page.crud-theme-lilac ~ .modal,
+.crud-page--categorias ~ .modal,
+.crud-page.crud-theme-green ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-lilac ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page--categorias ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.beauty-crud--categorias ~ .modal,
+.beauty-crud--categorias ~ .modal :is(.crud-modal, .beauty-crud-modal) {
+    --crud-accent: #9b70c6;
+    --crud-accent-strong: #7d54a8;
+    --crud-accent-rgb: 155, 112, 198;
+    --crud-tint: #f4edff;
+    --crud-tint-deep: #e6daf8;
+    --crud-banner-ink: #5f4578;
+}
+
+.crud-page.crud-theme-yellow :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-peach :is(.crud-modal, .beauty-crud-modal),
+.crud-page--clientes :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-yellow ~ .modal,
+.crud-page.crud-theme-peach ~ .modal,
+.crud-page--clientes ~ .modal,
+.crud-page.crud-theme-yellow ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-peach ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page--clientes ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.beauty-crud--clientes ~ .modal,
+.beauty-crud--clientes ~ .modal :is(.crud-modal, .beauty-crud-modal) {
+    --crud-accent: #df8a63;
+    --crud-accent-strong: #bf6b47;
+    --crud-accent-rgb: 223, 138, 99;
+    --crud-tint: #fff2e9;
+    --crud-tint-deep: #fce0d1;
+    --crud-banner-ink: #7e4d3b;
+}
+
+.crud-page.crud-theme-red :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-rose :is(.crud-modal, .beauty-crud-modal),
+.crud-page--sucursales :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-red ~ .modal,
+.crud-page.crud-theme-rose ~ .modal,
+.crud-page--sucursales ~ .modal,
+.crud-page.crud-theme-red ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page.crud-theme-rose ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.crud-page--sucursales ~ .modal :is(.crud-modal, .beauty-crud-modal),
+.beauty-crud--sucursales ~ .modal,
+.beauty-crud--sucursales ~ .modal :is(.crud-modal, .beauty-crud-modal) {
+    --crud-accent: #c94d72;
+    --crud-accent-strong: #a93559;
+    --crud-accent-rgb: 201, 77, 114;
+    --crud-tint: #fdeaf0;
+    --crud-tint-deep: #f8d6e1;
+    --crud-banner-ink: #73384d;
+}
+
+.crud-modal .modal-content,
+.beauty-crud-modal .modal-content,
+.modal-content.crud-modal,
+.modal-content.beauty-crud-modal {
+    overflow: hidden;
+    border: 1px solid var(--crud-border);
+    border-radius: 1.2rem;
+    color: var(--crud-ink);
+    background: #ffffff;
+    box-shadow: 0 18px 42px rgba(112, 57, 79, 0.2);
+}
+
+.crud-modal .modal-header,
+.beauty-crud-modal .modal-header {
+    align-items: center;
+    min-height: 4.5rem;
+    padding: 1rem 1.25rem;
+    border: 0;
+    background: linear-gradient(120deg, var(--crud-tint-deep), var(--crud-tint));
+}
+
+.crud-modal .modal-title,
+.beauty-crud-modal .modal-title,
+.crud-modal .beauty-page__modal-title,
+.beauty-crud-modal .beauty-page__modal-title {
+    color: var(--crud-banner-ink);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.crud-modal :is(.modal-title, .beauty-page__modal-title) > i,
+.beauty-crud-modal :is(.modal-title, .beauty-page__modal-title) > i,
+.crud-modal .beauty-page__modal-icon,
+.beauty-crud-modal .beauty-page__modal-icon {
+    margin-right: 0.38rem;
+    color: var(--crud-accent);
+}
+
+.crud-modal .btn-close,
+.beauty-crud-modal .btn-close {
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    border-radius: 0.62rem;
+    opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.crud-modal .btn-close:hover,
+.beauty-crud-modal .btn-close:hover {
+    opacity: 1;
+    background-color: #ffffff;
+}
+
+.crud-modal .modal-body,
+.beauty-crud-modal .modal-body {
+    padding: 1.25rem;
+    color: #735866;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    background: #ffffff;
+}
+
+.crud-modal .modal-body p:last-child,
+.beauty-crud-modal .modal-body p:last-child {
+    margin-bottom: 0;
+}
+
+.crud-modal .modal-footer,
+.beauty-crud-modal .modal-footer {
+    gap: 0.5rem;
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid var(--crud-border);
+    background: #fffafd;
+}
+
+.crud-modal .form-label,
+.beauty-crud-modal .form-label {
+    margin-bottom: 0.38rem;
+    color: #5f4350;
+    font-size: 0.79rem;
+    font-weight: 600;
+}
+
+.crud-modal :is(.form-control, .form-select),
+.beauty-crud-modal :is(.form-control, .form-select) {
+    min-height: 2.6rem;
+    border-color: #eddce4;
+    border-radius: 0.72rem;
+    color: var(--crud-ink);
+    font-size: 0.86rem;
+    background: #fffdfd;
+}
+
+.crud-modal textarea.form-control,
+.beauty-crud-modal textarea.form-control {
+    min-height: 6.7rem;
+}
+
+.crud-modal :is(.form-control, .form-select):focus,
+.beauty-crud-modal :is(.form-control, .form-select):focus {
+    border-color: var(--crud-accent);
+    box-shadow: 0 0 0 0.22rem rgba(var(--crud-accent-rgb), 0.15);
+}
+
+.crud-modal :is(.form-control, .form-select).is-invalid,
+.beauty-crud-modal :is(.form-control, .form-select).is-invalid {
+    border-color: #c94d72;
+}
+
+.crud-modal .invalid-feedback,
+.beauty-crud-modal .invalid-feedback {
+    color: #b13a60;
+    font-size: 0.76rem;
+}
+
+/* Keyboard and reduced-motion accessibility ---------------------------- */
+
+.crud-page :is(a, button, input, select, textarea):focus-visible,
+.crud-modal :is(a, button, input, select, textarea):focus-visible,
+.beauty-crud-modal :is(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid rgba(var(--crud-accent-rgb), 0.34);
+    outline-offset: 2px;
+}
+
+@media (min-width: 992px) {
+    .crud-summary--four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767.98px) {
+    .crud-page {
+        padding: 1rem;
+    }
+
+    .crud-page :is(.crud-header, .beauty-page__banner, .beauty-crud__hero),
+    .beauty-crud :is(.crud-header, .beauty-page__banner, .beauty-crud__hero) {
+        align-items: flex-start;
+        flex-direction: column;
+        min-height: 0;
+        padding: 1.35rem;
+    }
+
+    .crud-page :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions),
+    .beauty-crud :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions) {
+        width: 100%;
+    }
+
+    .crud-page :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions) .btn,
+    .beauty-crud :is(.crud-header__actions, .beauty-page__banner-actions, .beauty-crud__hero-actions) .btn {
+        flex: 1 1 auto;
+    }
+
+    .crud-page :is(.beauty-page__banner-icon, .beauty-crud__hero-icon),
+    .beauty-crud :is(.beauty-page__banner-icon, .beauty-crud__hero-icon) {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 3.55rem;
+        height: 3.55rem;
+        border-radius: 1rem;
+        font-size: 1.65rem;
+    }
+
+    .crud-table-card :is(.crud-table-card__header, .card-header, .crud-table-card__toolbar),
+    .beauty-crud__table-card :is(.crud-table-card__header, .card-header, .crud-table-card__toolbar, .beauty-crud__table-toolbar) {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .crud-table > :not(caption) > * > * {
+        padding: 0.78rem 0.92rem;
+    }
+
+    .crud-modal .modal-dialog,
+    .beauty-crud-modal .modal-dialog {
+        margin: 0.75rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .crud-summary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .crud-table .crud-table__actions {
+        justify-content: flex-start;
+    }
+
+    .crud-modal .modal-body,
+    .beauty-crud-modal .modal-body {
+        padding: 1rem;
+    }
+
+    .crud-modal .modal-footer .btn,
+    .beauty-crud-modal .modal-footer .btn {
+        flex: 1 1 auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .crud-page *,
+    .crud-modal *,
+    .beauty-crud-modal * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

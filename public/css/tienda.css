@@ -1,0 +1,720 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span,
+.footer-logo span {
+    color: #e95b91;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #e95b91;
+}
+
+
+/* =========================
+   BOTONES LOGIN
+========================= */
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-login,
+.btn-register {
+    padding: 10px 17px;
+    border-radius: 25px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn-login {
+    border: 1px solid #222;
+}
+
+.btn-login:hover {
+    background: #222;
+    color: white;
+}
+
+.btn-register {
+    background: #e95b91;
+    color: white;
+}
+
+.btn-register:hover {
+    background: #d9437b;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   BOTÓN MENÚ
+========================= */
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 75px);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #fceef3;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px;
+}
+
+.mini-title {
+    color: #e95b91;
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 6vw, 85px);
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #e95b91;
+}
+
+.descripcion {
+    max-width: 500px;
+
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-principal,
+.btn-secundario {
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn-principal {
+    background: #222;
+    color: white;
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secundario {
+    border: 1px solid #222;
+}
+
+.btn-secundario:hover {
+    background: #222;
+    color: white;
+}
+
+
+/* =========================
+   IMAGEN HERO
+========================= */
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #f8c9d9,
+        #f9e1e9
+    );
+}
+
+.maquillaje-card {
+    width: 330px;
+    height: 430px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #222;
+    color: white;
+
+    box-shadow: 20px 20px 0 #e95b91;
+
+    transform: rotate(3deg);
+}
+
+.maquillaje-card span {
+    background: #e95b91;
+
+    padding: 8px 15px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+}
+
+.maquillaje-card h3 {
+    font-size: 45px;
+    letter-spacing: 5px;
+}
+
+.maquillaje-card p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section,
+.productos-section,
+.contacto {
+    padding: 100px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.section-title p {
+    color: #e95b91;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-title span {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.categoria {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border: 1px solid #eeeeee;
+
+    transition: 0.3s;
+}
+
+.categoria:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.categoria-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.categoria h3 {
+    margin-bottom: 10px;
+}
+
+.categoria p {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos-section {
+    background: #fafafa;
+}
+
+.productos {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.producto {
+    background: white;
+
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-7px);
+}
+
+.producto-img {
+    height: 280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: #f7dce5;
+
+    font-size: 80px;
+}
+
+.etiqueta {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: #222;
+    color: white;
+
+    padding: 7px 10px;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.producto-info {
+    padding: 22px;
+}
+
+.producto-info p {
+    color: #999;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.producto-info h3 {
+    margin: 8px 0;
+}
+
+.precio {
+    display: block;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.producto-info button {
+    width: 100%;
+
+    padding: 11px;
+
+    background: #222;
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.producto-info button:hover {
+    background: #e95b91;
+}
+
+
+/* =========================
+   OFERTA
+========================= */
+
+.oferta {
+    min-height: 380px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: #222;
+    color: white;
+}
+
+.oferta p {
+    color: #e95b91;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.oferta h2 {
+    font-size: 55px;
+
+    margin: 15px 0;
+}
+
+.oferta span {
+    display: block;
+
+    max-width: 500px;
+
+    color: #ccc;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+.btn-oferta {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #e95b91;
+    color: white;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto-container {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+}
+
+.contacto-info h3 {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.contacto-info p {
+    color: #777;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.dato {
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.contacto-form textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.contacto-form button {
+    padding: 15px;
+
+    border: none;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.contacto-form button:hover {
+    background: #e95b91;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 7%;
+
+    text-align: center;
+
+    background: #f8f8f8;
+}
+
+.footer-logo {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: #e95b91;
+}
+
+footer small {
+    color: #999;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav,
+    .acciones {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+        padding: 60px 7%;
+    }
+
+    .hero-image {
+        min-height: 450px;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        text-align: center;
+    }
+
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .oferta h2 {
+        font-size: 40px;
+    }
+
+}
